@@ -1,0 +1,5 @@
+Quantum key distribution is a secure communication method that uses quantum physics to share encryption keys. In the BB84 protocol, Alice sends qubits to Bob using different bases. If an eavesdropper tries to measure the qubits, the quantum state changes. This creates errors, so Alice and Bob can detect spying.
+
+Cybersecurity protects information from unauthorized access, attacks, and data theft. Encryption changes a message into unreadable text using a key. A cipher is the method used to change readable text into hidden text.
+
+A strong study plan helps students revise important topics before an exam. Flashcards and quizzes improve memory because students actively recall information instead of only reading notes.

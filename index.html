@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduGuardian — AI Study Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <div class="logo">EduGuardian</div>
+      <div class="pill">Student AI Study Coach</div>
+    </nav>
+    <section class="hero-content">
+      <div>
+        <h1>Turn messy notes into a smart study plan.</h1>
+        <p>
+          Paste lecture notes or upload a text file. EduGuardian summarizes the material,
+          creates quizzes and flashcards, detects weak topics, and builds a revision plan.
+        </p>
+        <div class="hero-actions">
+          <a href="#app" class="btn primary">Start demo</a>
+          <a href="#how" class="btn secondary">How it works</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="small-title">Real-world problem</span>
+        <h2>Students do not know what to study first.</h2>
+        <p>EduGuardian helps students focus on important and weak topics before exams.</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="grid-section" id="how">
+      <article class="info-card">
+        <h3>1. Add material</h3>
+        <p>Paste notes, textbook text, or upload a .txt file from class.</p>
+      </article>
+      <article class="info-card">
+        <h3>2. Generate help</h3>
+        <p>The prototype extracts key ideas and creates summary, quiz, and flashcards.</p>
+      </article>
+      <article class="info-card">
+        <h3>3. Track weakness</h3>
+        <p>Wrong quiz answers are saved as weak areas for revision.</p>
+      </article>
+    </section>
+
+    <section class="app-shell" id="app">
+      <div class="panel input-panel">
+        <div class="panel-head">
+          <h2>Your study material</h2>
+          <button class="mini-btn" id="loadDemoBtn">Load demo notes</button>
+        </div>
+        <label for="fileInput" class="file-box">
+          <span>Upload .txt notes</span>
+          <input type="file" id="fileInput" accept=".txt" />
+        </label>
+        <textarea id="notesInput" placeholder="Paste your lecture notes here..."></textarea>
+
+        <div class="settings-row">
+          <label>
+            Exam date
+            <input type="date" id="examDate" />
+          </label>
+          <label>
+            Study time/day
+            <select id="dailyTime">
+              <option value="30">30 minutes</option>
+              <option value="45" selected>45 minutes</option>
+              <option value="60">1 hour</option>
+              <option value="90">1.5 hours</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="action-grid">
+          <button id="summaryBtn">Create summary</button>
+          <button id="quizBtn">Generate quiz</button>
+          <button id="flashBtn">Make flashcards</button>
+          <button id="planBtn">Build study plan</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="tabs">
+          <button class="tab active" data-tab="summary">Summary</button>
+          <button class="tab" data-tab="quiz">Quiz</button>
+          <button class="tab" data-tab="flashcards">Flashcards</button>
+          <button class="tab" data-tab="plan">Plan</button>
+          <button class="tab" data-tab="weak">Weak areas</button>
+        </div>
+
+        <section class="tab-page active" id="summary">
+          <h2>Simple summary</h2>
+          <div id="summaryOutput" class="output-box empty">Your summary will appear here.</div>
+        </section>
+
+        <section class="tab-page" id="quiz">
+          <h2>Practice quiz</h2>
+          <div id="quizOutput" class="output-box empty">Generate a quiz to start.</div>
+          <button id="checkQuizBtn" class="btn primary hidden">Check answers</button>
+          <div id="quizResult"></div>
+        </section>
+
+        <section class="tab-page" id="flashcards">
+          <h2>Flashcards</h2>
+          <div id="flashOutput" class="cards empty">Flashcards will appear here.</div>
+        </section>
+
+        <section class="tab-page" id="plan">
+          <h2>Revision plan</h2>
+          <div id="planOutput" class="output-box empty">Choose an exam date and build a plan.</div>
+        </section>
+
+        <section class="tab-page" id="weak">
+          <h2>Weak topic tracker</h2>
+          <div id="weakOutput" class="output-box empty">Wrong quiz answers will appear here.</div>
+          <button id="clearWeakBtn" class="mini-btn danger">Clear weak areas</button>
+        </section>
+      </div>
+    </section>
+
+    <section class="pitch-section">
+      <h2>Project pitch</h2>
+      <p>
+        EduGuardian solves exam stress by turning large study materials into short explanations,
+        quizzes, flashcards, and a personal revision plan. It is useful for students because it
+        shows what to study, how to test yourself, and which weak areas need more practice.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype built for an innovation project. Later version can connect to a real AI API.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
